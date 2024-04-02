@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Box Properties</title>
+<style>
+    .box {
+        border: 1px solid black;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+
+<div class="box" id="myBox">This is a box</div>
+
+<form>
+    <label for="height">Height:</label>
+    <input type="number" id="height" onchange="updateBox()"><br>
+
+    <label for="width">Width:</label>
+    <input type="number" id="width" onchange="updateBox()"><br>
+
+    <label for="margin">Margin:</label>
+    <input type="number" id="margin" onchange="updateBox()"><br>
+
+    <label for="backgroundColor">Background Color:</label>
+    <input type="color" id="backgroundColor" onchange="updateBox()"><br>
+
+    <label for="interText">Inter Text:</label>
+    <input type="text" id="interText" onchange="updateBox()"><br>
+</form>
+
+<script>
+    function updateBox() {
+        var box = document.getElementById("myBox");
+        var height = document.getElementById("height").value + "px";
+        var width = document.getElementById("width").value + "px";
+        var margin = document.getElementById("margin").value + "px";
+        var backgroundColor = document.getElementById("backgroundColor").value;
+        var interText = document.getElementById("interText").value;
+
+        box.style.height = height;
+        box.style.width = width;
+        box.style.margin = margin;
+        box.style.backgroundColor = backgroundColor;
+        box.innerText = interText;
+    }
+</script>
+
+</body>
+</html>
